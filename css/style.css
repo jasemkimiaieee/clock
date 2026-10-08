@@ -1,0 +1,135 @@
+:root {
+  --primary-color: #3b82f6;
+  --text-color: #1f2937;
+  --bg-color: #ffffff;
+  --container-width: 1340px;
+  --font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #3b82f6;
+  font-family: var(--font-family);
+}
+
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background-color: #3b82f6;
+  border-radius: 100%;
+  border: 5px solid #00000076;
+  box-shadow:
+    0 0 10px #ffffff50 inset,
+    0 0 10px #ffffff50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+hour-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+minute-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hour,
+.min {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.hour span,
+.min span {
+  display: block;
+  background-color: #1b2d45;
+  width: 5px;
+  height: 20px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.min span {
+  width: 2px;
+  height: 5px;
+  background-color: #4b596cdd;
+}
+.hold {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background: #1b2d45;
+
+  border-radius: 50%;
+
+  z-index: 10;
+}
+.hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  border-radius: 20px;
+  transform: translateX(-50%) rotate(0deg);
+  rotate: 40deg;
+}
+.h {
+  width: 4px;
+  height: 30%;
+  background: #1b2d45;
+  z-index: 3;
+}
+.m {
+  width: 3px;
+  height: 40%;
+  background: #1b2d45;
+  z-index: 4;
+}
+.s {
+  width: 2px;
+  height: 49%;
+  background: red;
+  z-index: 5;
+}
+.time {
+  font-size: 14px;
+  position: absolute;
+  bottom: 15%;
+  background-color: #1b2d45;
+  color: #3b82f6;
+  padding: 5px 10px;
+  width: 100px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 500px) {
+  .clock {
+    width: 300px;
+    height: 300px;
+  }
+}
